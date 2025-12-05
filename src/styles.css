@@ -1,2 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@import "https://fonts.googleapis.com/css2?family=Inder&family=Petit+Formal+Script&family=Quicksand:wght@300..700&display=swap";
+
+@theme {
+     --color-background: #E9DEEE;
+     --color-primary: #F36E66;
+     --color-secundary: #7B5AE5;
+}
+
