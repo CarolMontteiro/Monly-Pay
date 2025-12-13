@@ -1,5 +1,6 @@
 
 <section class="bg-background flex justify-center items-center min-h-screen m-0">
+     <div class="fixed w-screen h-screen bg-background" *ngIf="showModal"></div>
      <div class="container mx-auto">
           <div class="flex justify-center items-center">
                <img ngSrc="/imageHome.png" width="500" height="500" priority alt="">
@@ -11,11 +12,24 @@
                           — menos caos, mais controle
                     </h1>
 
-                    <button class="bg-secundary mt-6 px-8 py-2 font-bold text-white rounded-lg cursor-pointer shadow-md shadow-blue-950 hover:bg-[linear-gradient(0deg,rgba(255,100,110,1),rgba(255,160,104,1))] ">
-                         Adicionar Nova Lista 
+                    <button (click)="openModal()" class="bg-secundary mt-6 px-8 py-2 font-bold text-white rounded-lg cursor-pointer shadow-md hover:bg-[linear-gradient(0deg,rgba(255,100,110,1),rgba(255,160,104,1))] ">
+                         Nova lista de contas
                          <i class="fa-solid fa-plus ml-1"></i>
                     </button>
                </div>
           </div>
+
+          <div class="modal-bg absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]" *ngIf="showModal">
+               <div class="modal bg-white w-xl p-8 rounded-2xl text-center shadow-md">
+                    <h3 class="text-primary text-2xl font-bold">Dê um nome a lista</h3>
+                    <input type="text" class="w-[80%] mt-6 py-1.5 px-3 bg-zinc-100 rounded-md border-2 border-secundary focus:outline-none caret-secundary" />
+                 
+                    <div class="flex justify-end text-lg font-medium mt-10">
+                         <button (click)="closeModal()" class="py-2.5 px-5 border-2 border-secundary rounded-lg text-secundary mr-5 cursor-pointer hover:bg-background">Cancelar</button>
+                         <button class="py-2.5 px-5 bg-secundary rounded-lg text-white cursor-pointer hover:bg-[linear-gradient(0deg,rgba(255,100,110,1),rgba(255,160,104,1))]">Concluir</button>
+                    </div>
+               </div>
+          </div>
+
      </div>
 </section>
