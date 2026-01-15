@@ -19,9 +19,10 @@
                </div>
           </div>
 
-         <app-modal-add-card
+         <app-modal-add-card 
          [show]="showModal"
          (close)="closeModal()"
-         />
+         (outputAddCardList)="getInputAndAddCard($event)" />
+
      </div>
 </section>
