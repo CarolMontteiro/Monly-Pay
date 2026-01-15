@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, input, output, viewChild,} from '@angular/core';
+import { ICardItem } from '../interface/ICardItem.interface';
 
 @Component({
   selector: 'app-modal-add-card',
@@ -8,12 +9,34 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './modal-add-card.css',
 })
 export class ModalAddCard {
-
-  @Input() show!: boolean;
-  @Output() close = new EventEmitter<void>();
+  show = input<boolean>(false);
+  close = output<void>();
 
   closeModal() {
     this.close.emit();
   }
   
+  public inputText = viewChild<ElementRef<HTMLInputElement>>("inputText");
+
+  public outputAddCardList = output<ICardItem>();
+  public focusAndAddCard(value: string) {
+    if(!value.trim()) return; {
+     
+      const currentDate = new Date();
+      const timestamp = currentDate.getTime();
+      const id = `ID ${timestamp}`
+
+      this.outputAddCardList.emit({
+        id,
+        checked: false,
+        value
+      })
+      
+      const input = this.inputText()?.nativeElement;
+      if(input) {
+        input.value = '';
+        input.focus();
+      }
+    }
+  }
 }

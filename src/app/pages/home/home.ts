@@ -1,9 +1,10 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, JsonPipe, NgOptimizedImage } from '@angular/common';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 //component
 import { ModalAddCard } from './modal-add-card/modal-add-card';
+import { ICardItem } from './interface/ICardItem.interface';
 
 @Component({
   selector: 'app-home',
@@ -16,16 +17,30 @@ import { ModalAddCard } from './modal-add-card/modal-add-card';
   styleUrl: './home.css',
 })
 export class Home {
-    newNameList = '';
-    showModal = false;
+  newNameList = '';
+  showModal = false;
 
-    openModal() {
-      this.newNameList = '';
-      this.showModal = true; 
-    }
+  openModal() {
+    this.newNameList = '';
+    this.showModal = true; 
+  }
 
-    closeModal() {
-      this.showModal = false;
-    }
+  closeModal() {
+    this.showModal = false;
+  }
 
+  #setCarsItems = signal<ICardItem[]>(this.#parseItems());
+  public getCardItems = this.#setCarsItems.asReadonly();
+
+  #parseItems(): ICardItem[] {
+    return JSON.parse(localStorage.getItem('@my-card') || '[]');
+  }
+
+  public getInputAndAddCard(value: ICardItem) {
+    this.#setCarsItems.update(items => {
+      const updated = [...items, value];
+      localStorage.setItem('@my-card', JSON.stringify(updated));
+      return updated;
+    });
+  }
 }
