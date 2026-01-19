@@ -22,7 +22,18 @@
          <app-modal-add-card 
          [show]="showModal"
          (close)="closeModal()"
+         [inputListCard]="cards()"
          (outputAddCardList)="getInputAndAddCard($event)" />
-
      </div>
+</section>
+
+<section>
+     <ul class="mt-10">
+          <li
+            *ngFor="let card of cards()"
+            class="p-3 border-b border-zinc-300">
+     
+            {{ card.value }}
+          </li>
+     </ul>
 </section>

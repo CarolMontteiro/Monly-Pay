@@ -18,8 +18,10 @@ export class ModalAddCard {
   
   public inputText = viewChild<ElementRef<HTMLInputElement>>("inputText");
 
+  public inputListCard = input.required<ICardItem[]>();
+
   public outputAddCardList = output<ICardItem>();
-  public focusAndAddCard(value: string) {
+  public addCard(value: string) {
     if(!value.trim()) return; {
      
       const currentDate = new Date();
@@ -32,11 +34,7 @@ export class ModalAddCard {
         value
       })
       
-      const input = this.inputText()?.nativeElement;
-      if(input) {
-        input.value = '';
-        input.focus();
-      }
+      this.close.emit();
     }
   }
 }

@@ -30,7 +30,7 @@ export class Home {
   }
 
   #setCarsItems = signal<ICardItem[]>(this.#parseItems());
-  public getCardItems = this.#setCarsItems.asReadonly();
+  public cards = this.#setCarsItems.asReadonly();
 
   #parseItems(): ICardItem[] {
     return JSON.parse(localStorage.getItem('@my-card') || '[]');
