@@ -1,59 +1,94 @@
-# MonlyPay
+# 💳 MonlyPay
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+**MonlyPay** é uma aplicação web para **organização de gastos mensais**, criada para facilitar o controle de despesas realizadas em cartões de crédito por diferentes pessoas ao longo de um mês.
 
-## Development server
+O projeto surgiu a partir de uma necessidade real(pessoal): substituir planilhas manuais por um sistema simples, visual e dinâmico, permitindo acompanhar gastos, parcelas e totais de forma mais prática.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🎯 Objetivo do Projeto
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Centralizar gastos mensais em um único sistema
+- Organizar despesas por **mês**, **pessoa** e **cartão**
+- Evitar controle manual em planilhas
+- Servir como projeto prático para aprendizado de **Angular moderno**
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🧠 Conceito de Funcionamento
 
-```bash
-ng generate component component-name
-```
+O fluxo principal do sistema é estruturado da seguinte forma:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. **Tela inicial (Home)**
+   - Exibe a marca **MonlyPay**
+   - Possui um botão para criar uma nova lista mensal
 
-```bash
-ng generate --help
-```
+2. **Criação de listas**
+   - Ao clicar em “Nova lista de contas”, um **modal** é aberto
+   - O usuário define o nome da lista (ex: *Contas de Dezembro*)
+   - Ao confirmar, um **card** é gerado automaticamente na Home
 
-## Building
+3. **Organização por pessoas**
+   - Cada lista mensal pode conter várias pessoas
+   - Cada pessoa pode utilizar um ou mais cartões
 
-To build the project run:
+4. **Tabelas de gastos**
+   - Cada cartão possui sua própria tabela
+   - As tabelas são adicionadas conforme a necessidade
+   - Cada tabela contém:
+     - Descrição do gasto
+     - Parcela (quando houver)
+     - Valor
+   - O sistema calcula o **total automaticamente**
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🛠️ Tecnologias Utilizadas
 
-## Running unit tests
+- **Angular 20 **
+- **TypeScript**
+- **HTML5**
+- **CSS / Tailwind CSS**
+- **LocalStorage** (persistência local)
+- **Angular CDK (planejado para modais e interações)**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## 🚧 Status do Projeto
 
-## Running end-to-end tests
+🟡 **Em desenvolvimento**
 
-For end-to-end (e2e) testing, run:
+### Funcionalidades em andamento
+- Criação de listas mensais
+- Modal para criação de listas
+- Persistência inicial de dados com **LocalStorage**
 
-```bash
-ng e2e
-```
+### Próximos passos planejados
+- CRUD de pessoas
+- CRUD de cartões
+- Tabelas dinâmicas por cartão
+- Cálculo automático de totais
+- Melhorias de UX/UI
+- Integração com backend futuramente
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📚 Referência de Estudo e Adaptação de Versão
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto teve como **referência inicial de estudo** um curso de **Angular v17+ da plataforma Udemy**, usei como base um módulo de projeto prático de Lista de Tarefas.
+
+No entanto:
+
+- O **MonlyPay foi desenvolvido utilizando Angular v20**
+- Desde o lançamento do curso, ocorreram mudanças significativas no framework
+
+Foi necessário **adaptar conceitos e implementar soluções compatíveis com versões mais recentes**
+
+> O curso serviu como guia conceitual, enquanto a implementação exigiu análise, adaptação e decisões técnicas próprias.
+
+## 👩‍💻 Autora
+
+**Carol Monteiro**  
+Front-end Developer em formação • Angular • JavaScript
+
+
