@@ -4,7 +4,6 @@
 
 O projeto surgiu a partir de uma necessidade real(pessoal): substituir planilhas manuais por um sistema simples, visual e dinâmico, permitindo acompanhar gastos, parcelas e totais de forma mais prática.
 
----
 
 ## 🎯 Objetivo do Projeto
 
@@ -13,7 +12,6 @@ O projeto surgiu a partir de uma necessidade real(pessoal): substituir planilhas
 - Evitar controle manual em planilhas
 - Servir como projeto prático para aprendizado de **Angular moderno**
 
----
 
 ## 🧠 Conceito de Funcionamento
 
@@ -41,18 +39,16 @@ O fluxo principal do sistema é estruturado da seguinte forma:
      - Valor
    - O sistema calcula o **total automaticamente**
 
----
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Angular 20 **
+- **Angular 20**
 - **TypeScript**
 - **HTML5**
 - **CSS / Tailwind CSS**
 - **LocalStorage** (persistência local)
 - **Angular CDK (planejado para modais e interações)**
 
----
 
 ## 🚧 Status do Projeto
 
@@ -71,7 +67,6 @@ O fluxo principal do sistema é estruturado da seguinte forma:
 - Melhorias de UX/UI
 - Integração com backend futuramente
 
----
 
 ## 📚 Referência de Estudo e Adaptação de Versão
 
